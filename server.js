@@ -708,5 +708,5 @@ const projDir = path.join(__dirname, "./proj");
 app.use(express.static(projDir));
 
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
 });
