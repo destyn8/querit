@@ -14,7 +14,7 @@ const { ObjectId } = require("mongodb");
 const dotenv = require("dotenv");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const secretKey = crypto.randomBytes(20).toString("hex");
 dotenv.config();
 
