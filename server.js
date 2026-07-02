@@ -12,11 +12,12 @@ const fs = require("fs");
 const uploadDir = "./uploads";
 const { ObjectId } = require("mongodb");
 const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-const secretKey = crypto.randomBytes(20).toString("hex");
-dotenv.config();
+const secretKey = process.env.SESSION_SECRET || crypto.randomBytes(20).toString("hex");
+
 
 app.use(cors());
 app.use(bodyParser.json());
